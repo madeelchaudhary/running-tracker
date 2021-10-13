@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;600&display=swap" rel="stylesheet">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <figure class="running-man">
+            <img src="images/running.svg" alt="">
+        </figure>
+        <section class="input-form">
+            <form action="">
+                <div class="input-group">
+                    <label for="distanceCover">Number of miles today:</label>
+                    <input type="number" name="distance_cover" id="distanceCover" required max="200" step="0.1">
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="btn" id="formBtn">Add</button>
+                </div>
+            </form>
+        </section>
+        <hr class="divider">
+        <section class="distance-group">
+            <h3 class="section-subtitle">
+                Last 7 days:
+            </h3>
+            <ul class="distance-list">
+                <li class="distance-list-item">-</li>
+                <li class="distance-list-item">-</li>
+                <li class="distance-list-item">-</li>
+                <li class="distance-list-item">-</li>
+                <li class="distance-list-item">-</li>
+                <li class="distance-list-item">-</li>
+                <li class="distance-list-item">-</li>
+            </ul>
+        </section>
+
+        <section class="analytics">
+            <ul class="analytics-list">
+                <li class="analytics-list-item">
+                    <p class="analytics-type">Total:</p>
+                    <span class="analytics-value" id="totalDistance"></span>
+                </li>
+                <li class="analytics-list-item">
+                    <p class="analytics-type">Average:</p>
+                    <span class="analytics-value" id="averageDistance"></span>
+                </li>
+                <li class="analytics-list-item">
+                    <p class="analytics-type">This weeks high:</p>
+                    <span class="analytics-value" id="weekendHigh"></span>
+                </li>
+            </ul>
+            <div class="progress-container">
+                <h3 class="section-subtitle">
+                    Weekly target: <span id="acheivedValue">0</span>/25 miles
+                </h3>
+                <div class="progress">
+                    <svg class="progress-ring">
+                        <circle cx="100" cy="100" r="70" fill="transparent"></circle>
+                        <circle cx="100" cy="100" r="70" fill="transparent" class="progress-circle"></circle>
+                    </svg>
+                    <p class="progress-value">
+                        <span id="progressValue">0</span>%
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <template id="alertTemplate">
+        <article class="alert" id="alert" role="alertdialog">
+            <p class="alert-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+            <button class="alert-close" id="btnAlert">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                </svg>
+            </button>
+        </article>
+    </template>
+
+</body>
+
+</html>
